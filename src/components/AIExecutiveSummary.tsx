@@ -109,9 +109,9 @@ export const AIExecutiveSummary: React.FC<AIExecutiveSummaryProps> = ({ aggregat
   const isGrowth = currentFocusRegion && currentFocusRegion.revenueDiff >= 0;
 
   return (
-    <div className="bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 border border-indigo-500/20 rounded-2xl shadow-xl shadow-indigo-950/20 overflow-hidden relative">
+    <div className="bg-slate-950/90 backdrop-blur-md border border-pink-500/30 rounded-2xl shadow-2xl shadow-pink-950/20 overflow-hidden relative">
       {/* Top Banner & Control Bar */}
-      <div className="px-6 py-4 border-b border-slate-800/80 bg-slate-950/40 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+      <div className="px-6 py-4 border-b border-pink-500/20 bg-slate-950/60 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
         <div className="flex items-center space-x-3">
           <div className="h-9 w-9 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400">
             <Sparkles className="w-5 h-5" />

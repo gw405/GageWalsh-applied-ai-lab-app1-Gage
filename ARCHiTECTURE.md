@@ -27,6 +27,7 @@ The following table catalogs every file in the repository alongside a one-senten
 | `src/components/RawDataDrawer.tsx` | Slide-over drawer providing a paginated, searchable, and sortable inspection view of every parsed sales order record. |
 | `src/components/RevenueChart.tsx` | High-performance custom SVG chart visualizing regional and quarterly revenues across four interactive viewing modes. |
 | `src/components/RevenueTable.tsx` | Interactive cross-tabulation table computing regional quarterly revenues, expandable volume metrics, and CSV export capabilities. |
+| `src/components/SoccerBallLogo.tsx` | Vector SVG soccer ball emblem with dynamic neon aura and hover interaction for the top right corner. |
 | `src/components/UploadModal.tsx` | Drag-and-drop modal dialog enabling users to upload custom sales order CSV files with automatic header mapping. |
 | `src/index.css` | Global stylesheet configuring Tailwind CSS utility layers, base dark-mode theme colors, and custom scrollbars. |
 | `src/main.tsx` | Client application entry point that instantiates the React root and renders the App hierarchy into the DOM. |

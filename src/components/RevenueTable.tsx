@@ -121,9 +121,9 @@ export const RevenueTable: React.FC<RevenueTableProps> = ({ aggregation }) => {
   };
 
   return (
-    <div className="bg-slate-900 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
+    <div className="bg-slate-950/90 backdrop-blur-md border border-pink-500/30 rounded-2xl p-6 shadow-2xl shadow-pink-950/20 space-y-4">
       {/* Top Header & Search Bar */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-slate-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-3 border-b border-pink-500/20">
         <div className="flex items-center space-x-3">
           <div className="p-2 rounded-xl bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
             <Table className="w-5 h-5" />

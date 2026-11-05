@@ -3,6 +3,7 @@ import { BarChart3, UploadCloud, FileSpreadsheet, Sparkles, Download, Layers } f
 import { SalesAggregation } from '../types.ts';
 import { formatCompactCurrency } from '../utils/calculator.ts';
 import { SAMPLE_CSV_CONTENT } from '../utils/sampleData.ts';
+import { SoccerBallLogo } from './SoccerBallLogo.tsx';
 
 interface HeaderProps {
   aggregation: SalesAggregation | null;
@@ -31,7 +32,7 @@ export const Header: React.FC<HeaderProps> = ({
   };
 
   return (
-    <header className="border-b border-slate-800 bg-slate-900/90 backdrop-blur-md sticky top-0 z-40">
+    <header className="border-b border-pink-500/30 bg-slate-950/90 backdrop-blur-md sticky top-0 z-40 shadow-lg shadow-pink-950/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
           {/* Logo & Title */}
@@ -132,11 +133,16 @@ export const Header: React.FC<HeaderProps> = ({
 
             <button
               onClick={onOpenUpload}
-              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-white bg-gradient-to-r from-indigo-600 to-indigo-500 hover:from-indigo-500 hover:to-indigo-400 rounded-lg shadow-sm shadow-indigo-600/30 transition-all hover:scale-[1.02]"
+              className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-semibold text-white bg-gradient-to-r from-pink-600 via-pink-500 to-yellow-500 hover:from-pink-500 hover:to-yellow-400 rounded-lg shadow-sm shadow-pink-600/30 transition-all hover:scale-[1.02]"
             >
               <UploadCloud className="w-3.5 h-3.5" />
               Upload CSV
             </button>
+
+            {/* Soccer Ball Logo in the Top Right Corner */}
+            <div className="pl-2 ml-1 border-l border-pink-500/30 flex items-center shrink-0">
+              <SoccerBallLogo size={38} />
+            </div>
           </div>
         </div>
       </div>
