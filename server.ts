@@ -68,15 +68,17 @@ app.post('/api/analyze-q2-q3', async (req, res) => {
 
     if (targetRegionData.topChannelDrivers && targetRegionData.topChannelDrivers.length > 0) {
       const topCh = targetRegionData.topChannelDrivers[0];
+      const chName = topCh.name || topCh.channel;
       driverDetails.push(
-        `Top Channel Impact: ${topCh.channel} channel changed by ${formatUSD(topCh.diff)} from ${formatUSD(topCh.q2Rev)} to ${formatUSD(topCh.q3Rev)}`
+        `Top Channel Impact: ${chName} channel changed by ${formatUSD(topCh.diff)} from ${formatUSD(topCh.q2Rev)} to ${formatUSD(topCh.q3Rev)}`
       );
     }
 
     if (targetRegionData.topProductDrivers && targetRegionData.topProductDrivers.length > 0) {
       const topProd = targetRegionData.topProductDrivers[0];
+      const prodName = topProd.name || topProd.product;
       driverDetails.push(
-        `Top Product Impact: ${topProd.product} changed by ${formatUSD(topProd.diff)} from ${formatUSD(topProd.q2Rev)} to ${formatUSD(topProd.q3Rev)}`
+        `Top Product Impact: ${prodName} changed by ${formatUSD(topProd.diff)} from ${formatUSD(topProd.q2Rev)} to ${formatUSD(topProd.q3Rev)}`
       );
     }
 
@@ -110,8 +112,10 @@ STRICT INSTRUCTIONS:
       const diffSign = targetRegionData.revenueDiff >= 0 ? '+' : '';
       const sentence1 = `${targetRegionData.region} experienced the largest revenue change from Q2 to Q3, moving from ${formatUSD(targetRegionData.q2Revenue)} to ${formatUSD(targetRegionData.q3Revenue)}, a variance of ${diffSign}${formatUSD(targetRegionData.revenueDiff)} (${formatPct(targetRegionData.revenuePctChange)}).`;
       
-      const channelPart = targetRegionData.topChannelDrivers?.[0]
-        ? ` with the ${targetRegionData.topChannelDrivers[0].channel} channel shifting by ${targetRegionData.topChannelDrivers[0].diff >= 0 ? '+' : ''}${formatUSD(targetRegionData.topChannelDrivers[0].diff)}`
+      const topCh = targetRegionData.topChannelDrivers?.[0];
+      const chName = topCh?.name || topCh?.channel;
+      const channelPart = topCh
+        ? ` with the ${chName} channel shifting by ${topCh.diff >= 0 ? '+' : ''}${formatUSD(topCh.diff)}`
         : '';
       const sentence2 = `This change was primarily driven by a volume change of ${targetRegionData.unitsDiff >= 0 ? '+' : ''}${targetRegionData.unitsDiff.toLocaleString()} units (${formatPct(targetRegionData.unitsPctChange)}) alongside an average discount movement from ${targetRegionData.q2AvgDiscount.toFixed(1)}% to ${targetRegionData.q3AvgDiscount.toFixed(1)}%${channelPart}.`;
       

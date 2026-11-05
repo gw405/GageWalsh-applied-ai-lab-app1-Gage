@@ -453,7 +453,7 @@ export const RevenueChart: React.FC<RevenueChartProps> = ({ aggregation }) => {
                               region,
                               quarter: pt.q,
                               revenue: pt.rev,
-                              x: rect.left,
+                              x: rect.left + rect.width / 2,
                               y: rect.top,
                             });
                           }}
@@ -486,10 +486,10 @@ export const RevenueChart: React.FC<RevenueChartProps> = ({ aggregation }) => {
         {/* Hover Tooltip Overlay */}
         {hoveredData && (
           <div
-            className="absolute z-30 pointer-events-none -translate-x-1/2 -translate-y-full mb-3 bg-slate-900 border border-slate-700/80 rounded-xl px-3.5 py-2 shadow-2xl text-xs backdrop-blur-md"
+            className="fixed z-50 pointer-events-none -translate-x-1/2 -translate-y-full mb-2 bg-slate-900/95 border border-slate-700/80 rounded-xl px-3.5 py-2 shadow-2xl text-xs backdrop-blur-md"
             style={{
-              left: Math.max(100, Math.min(hoveredData.x, window.innerWidth - 120)),
-              top: Math.max(20, hoveredData.y - 10),
+              left: hoveredData.x,
+              top: hoveredData.y - 6,
             }}
           >
             <div className="flex items-center justify-between gap-3 border-b border-slate-800 pb-1 mb-1">
